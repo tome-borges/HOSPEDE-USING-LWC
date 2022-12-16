@@ -1,0 +1,20 @@
+.status-services{
+    width: 150px;
+    height: 100px;
+    border: 10px;
+    display: inline-block;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 25px;
+    background-color: #dde5fc;
+    text-align: center;
+    
+}
+
+h1{
+    padding-top: 20px;
+}
+
+h2{
+    padding-top: 25px;
+}

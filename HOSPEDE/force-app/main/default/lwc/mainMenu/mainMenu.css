@@ -1,0 +1,19 @@
+.slds-card {
+    border-radius: 25px;
+}
+
+
+.div-main-menu {
+    display: inline;
+    margin-right: 60px;
+    margin-left: 60px;
+}   
+
+.buttons-main-manu{
+    border-radius: 25px;
+}
+
+.image-from-main-menu{
+    width: 100px;
+    height: 100px;
+}
