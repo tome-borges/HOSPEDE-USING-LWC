@@ -2,9 +2,10 @@
     <lightning-card title="Main Menu">
 		<div>
 			<div class="div-main-menu">
-				<button  class="slds button slds-button_brand-outline buttons-main-manu">
+				<button  class="slds button slds-button_brand-outline buttons-main-manu" onclick={openUserModal}>
                     <img src="/resource/1669218932000/User?" class="image-from-main-menu"/>
                 </button>
+
 				<button class="slds button slds-button_brand-outline buttons-main-manu">
                     <img src="/resource/1669219086000/Room?" class="image-from-main-menu"/>
         
@@ -42,5 +43,34 @@
         <c-check-in></c-check-in>
     <c-check-out></c-check-out>
     </div>
+
+    <template if:true={isModelUserOpen}>
+                    <!-- Modal/Popup Box LWC starts here -->
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+                        <div class="slds-modal__container">
+                            <!-- Modal/Popup Box LWC header here -->
+                            <header class="slds-modal__header">
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeUserModal}>
+                                    <lightning-icon icon-name="utility:close"
+                                        alternative-text="close"
+                                        variant="inverse"
+                                        size="small" ></lightning-icon>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">User Console</h2>
+                            </header>
+                            <!-- Modal/Popup Box LWC body starts here -->
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <c-user-console></c-user-console>
+                            </div>
+                            <!-- Modal/Popup Box LWC footer starts here -->
+                            <footer class="slds-modal__footer">
+                                <button class="slds-button slds-button_brand" onclick={closeUserModal} title="Close">Close</button>
+                            </footer>
+                        </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+     </template>
     
 </template>
