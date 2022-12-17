@@ -1,4 +1,4 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 
 const columns = [
     { label: 'Status', fieldName: 'Status' },
@@ -8,17 +8,7 @@ const columns = [
     { label: 'Phone', fieldName: 'Phone' }
 ];
 
-export default class UserConsole extends LightningElement {
+export default class TourConsole extends LightningElement {
     data =  [ ];
     columns = columns;
-
-    @track openModalRegister = false;
-
-    openModal(){
-        this.openModalRegister = true;
-    }
-
-    closeModal(){
-        this.openModalRegister = false;
-    }
 }

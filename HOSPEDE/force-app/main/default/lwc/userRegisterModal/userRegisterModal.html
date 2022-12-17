@@ -1,0 +1,16 @@
+<template>
+    <lightning-record-edit-form object-api-name="User" onsuccess={handleSuccess}>
+        <lightning-messages></lightning-messages>
+        <div class=“slds-m-around_medium”>
+            <lightning-input-field field-name="Id" value={UserId}></lightning-input-field>
+            <lightning-input-field field-name="LastName"></lightning-input-field>
+            <lightning-input-field field-name="Email"></lightning-input-field>
+            <lightning-input-field field-name="LastName"></lightning-input-field>
+
+            <div class=“slds-m-top_medium”>
+                <lightning-button variant=“brand” type=“submit” name=“save” label="Create"></lightning-button>
+            </div>
+
+        </div>
+    </lightning-record-edit-form>
+</template>
