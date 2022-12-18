@@ -1,16 +1,29 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track, wire,api } from 'lwc';
+import getUsers from "@salesforce/apex/UserController.getUsers"
 
 const columns = [
-    { label: 'Status', fieldName: 'Status' },
-    { label: 'Client', fieldName: 'Client'},
-    { label: 'Check-In', fieldName: 'CheckIn'},
-    { label: 'Check-Out', fieldName: 'CheckOut'},
+    { label: 'Last Name ', fieldName: 'LastName'},
+    { label: 'Email', fieldName: 'Email'},
+    { label: 'Profile', fieldName: 'Profile.Name'},
+    { label: 'User Name', fieldName: 'UserName'},
     { label: 'Phone', fieldName: 'Phone' }
 ];
 
 export default class UserConsole extends LightningElement {
-    data =  [ ];
+    @track data;
+    @track error;
     columns = columns;
+
+    @wire(getUsers)
+    wiredUsers({error, data}){
+
+        if(data){
+            this.data = data;
+        } else if(error){
+            this.error = error;
+        }
+
+    }
 
     @track openModalRegister = false;
 
